@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace TryRx
@@ -10,7 +11,7 @@ namespace TryRx
             = new Subject<TransferMoney>();
         public static IObservable<TransferMoney> TransferMoney
         {
-            get { return TransferMoneySubj; }
+			get { return TransferMoneySubj.AsObservable(); }
         }
 
         // Identifer
