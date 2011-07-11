@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryRx", "src\TryRx\TryRx.csproj", "{61DE1812-5D52-48D5-B625-B5A3114B55B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryComplexRx", "src\TryComplexRx\TryComplexRx.csproj", "{0FD0DED9-0947-4C4E-B61E-193257AD2798}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{61DE1812-5D52-48D5-B625-B5A3114B55B0}.Debug|x86.Build.0 = Debug|x86
 		{61DE1812-5D52-48D5-B625-B5A3114B55B0}.Release|x86.ActiveCfg = Release|x86
 		{61DE1812-5D52-48D5-B625-B5A3114B55B0}.Release|x86.Build.0 = Release|x86
+		{0FD0DED9-0947-4C4E-B61E-193257AD2798}.Debug|x86.ActiveCfg = Debug|x86
+		{0FD0DED9-0947-4C4E-B61E-193257AD2798}.Debug|x86.Build.0 = Debug|x86
+		{0FD0DED9-0947-4C4E-B61E-193257AD2798}.Release|x86.ActiveCfg = Release|x86
+		{0FD0DED9-0947-4C4E-B61E-193257AD2798}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
