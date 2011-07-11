@@ -1,6 +1,8 @@
-﻿namespace TryComplexRx.Domain
+﻿using TryComplexRx.Abstractions;
+
+namespace TryComplexRx.Domain
 {
-    public class Account
+    public class Account : EntityInContext
     {
         public string Number { get; protected set; }
         public decimal CurrentBalance { get; protected set; }
@@ -13,7 +15,7 @@
         {
             CurrentBalance -= amount;
 
-            Env.Events.OnNext(new MoneyTransferedTo
+            SubmitEvent(new MoneyTransferedTo
             {
                 Amount = amount,
                 AccountNumber = Number,
@@ -25,7 +27,7 @@
         {
             CurrentBalance += amount;
 
-            Env.Events.OnNext(new MoneyTransferedFrom
+            SubmitEvent(new MoneyTransferedFrom
             {
                 Amount = amount,
                 AccountNumber = Number,
@@ -33,10 +35,10 @@
             });
         }
 
-        public static Account Create(string number)
+        public static Account Create(string context, string number)
         {
-            var account = new Account { Number = number };            
-            Env.Events.OnNext(new AccountCreated { AccountNumber = number });
+            var account = new Account { Context = context, Number = number };            
+            Env.Events.OnNext(new AccountCreated { Context = context, AccountNumber = number });
             Accounts.Attach(account);
             return account;
         }

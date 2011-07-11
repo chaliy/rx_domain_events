@@ -14,19 +14,19 @@ namespace TryComplexRx.Domain
                 .OfType<MoneyTransferedTo>()
                 .Subscribe(x =>
                 {
-                    var account = Get(x.TargetAccountNumber);
+                    var account = Get(x.Context, x.TargetAccountNumber);
                     account.RegisterTransferedFrom(x.AccountNumber, x.Amount);
                 });
         }
 
-        public static Account Get(string accountNumer)
+        public static Account Get(string context, string accountNumer)
         {
-            return State[accountNumer];
+            return State[context + "-" + accountNumer];
         }
 
         public static void Attach(Account account)
         {
-            State[account.Number] = account;
+            State[account.Context + "-" + account.Number] = account;
         }
     }
 }

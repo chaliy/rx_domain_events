@@ -1,6 +1,8 @@
-﻿namespace TryComplexRx.Domain
+﻿using TryComplexRx.Abstractions;
+
+namespace TryComplexRx.Domain
 {
-    public class MoneyTransferedFrom : IAccountEvent
+    public class MoneyTransferedFrom : EventInContext, IAccountEvent
     {
         public string AccountNumber { get; set; }
         public decimal Amount { get; set; }        

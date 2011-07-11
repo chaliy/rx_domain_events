@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\EntityInContext.cs" />
+    <Compile Include="Abstractions\EventInContext.cs" />
     <Compile Include="Domain\Account.cs" />
     <Compile Include="Domain\AccountCreated.cs" />
     <Compile Include="Domain\Accounts.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="Domain\IAccountEvent.cs" />
     <Compile Include="Domain\MoneyTransferedTo.cs" />
     <Compile Include="Env.cs" />
+    <Compile Include="Abstractions\IInContext.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
