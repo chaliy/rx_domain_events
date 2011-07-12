@@ -50,6 +50,7 @@
     <Compile Include="Abstractions\EventInContext.cs" />
     <Compile Include="Domain\Account.cs" />
     <Compile Include="Domain\AccountCreated.cs" />
+    <Compile Include="Domain\AccountListDenormalizer.cs" />
     <Compile Include="Domain\Accounts.cs" />
     <Compile Include="Domain\MoneyTransferedFrom.cs" />
     <Compile Include="Domain\IAccountEvent.cs" />
