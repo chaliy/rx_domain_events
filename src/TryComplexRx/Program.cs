@@ -1,6 +1,5 @@
 ﻿using System;
 using TryComplexRx.Domain;
-using TryComplexRx.Infrastructure;
 
 namespace TryComplexRx
 {
@@ -9,9 +8,6 @@ namespace TryComplexRx
         static void Main(string[] args)
         {
             // Init infrastructure
-            // Unit of Work
-            var uow = new UnitOfWork();
-            Env.Events.Subscribe(uow);
             // Audit
             Env.Events.Subscribe(Console.WriteLine);
 
@@ -25,8 +21,7 @@ namespace TryComplexRx
             account1.SendTransferTo(account2.Number, 12.0m);
 
 
-            // Submit operation to database
-            uow.Commit();
+            
         }
     }
 }

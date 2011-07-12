@@ -35,6 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Simple.Data.Ado.mm">
+      <HintPath>..\..\packages\Simple.Data.Ado.0.7.1\lib\net40\Simple.Data.Ado.mm.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.mm">
+      <HintPath>..\..\packages\Simple.Data.Core.0.7.1\lib\net40\Simple.Data.mm.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.SqlCe40.mm">
+      <HintPath>..\..\packages\Simple.Data.SqlCompact40.0.7.1\lib\net40\Simple.Data.SqlCe40.mm.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Reactive">
@@ -55,9 +64,10 @@
     <Compile Include="Domain\MoneyTransferedFrom.cs" />
     <Compile Include="Domain\IAccountEvent.cs" />
     <Compile Include="Domain\MoneyTransferedTo.cs" />
+    <Compile Include="_.cs" />
     <Compile Include="Env.cs" />
     <Compile Include="Abstractions\IInContext.cs" />
-    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Infrastructure\Views.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +77,10 @@
     <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
