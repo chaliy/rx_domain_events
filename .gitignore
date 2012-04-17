@@ -8,3 +8,10 @@ _ReSharper.*
 *.resharper.user
 *.resharper
 ~$*
+TestResult.xml
+*.VisualState.xml
+packages
+temp
+*.ncrunchsolution
+*.crunchsolution.cache
+*.ncrunchproject

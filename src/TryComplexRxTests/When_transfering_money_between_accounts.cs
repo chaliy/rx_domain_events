@@ -19,6 +19,8 @@ namespace TryComplexRxTests
 
             _recorder = RxHelpers.Recorder<dynamic>(context);
             Env.Events.Subscribe(_recorder);
+
+            Accounts.Register();
             
 
             // Business logic
@@ -31,8 +33,8 @@ namespace TryComplexRxTests
         [Test]
         public void Should_trnasfer_money_from()
         {
-            _recorder.Messages.OfType<MoneyTransferedFrom>().Should().Contain.One(
-                x => x.AccountNumber == "ACC1" && x.Amount == 12.0m);
+            var transferEvents = _recorder.Messages.OfType<MoneyTransferedFrom>().ToList();
+            transferEvents.Should().Contain.One(x => x.AccountNumber == "ACC1" && x.Amount == 12.0m);
         }
 
         [Test]
