@@ -1,4 +1,4 @@
-﻿namespace TryComplexRx.Domain
+﻿namespace TryComplexRx.Domain.Accounts
 {
     public interface IAccountEvent
     {

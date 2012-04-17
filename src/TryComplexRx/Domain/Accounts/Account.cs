@@ -1,14 +1,23 @@
-﻿using TryComplexRx.Abstractions;
-
-namespace TryComplexRx.Domain
+﻿namespace TryComplexRx.Domain.Accounts
 {
+    using Abstractions;
+
     public class Account : EntityInContext
     {
         public string Number { get; protected set; }
         public decimal CurrentBalance { get; protected set; }
 
-        protected Account()
+        internal Account()
         {
+        }
+
+        public void Create(string number)
+        {            
+            Number = number;
+            SubmitEvent(new AccountCreated
+            {                
+                AccountNumber = Number
+            });
         }
 
         public void SendTransferTo(string targetAccountNumber, decimal amount)
@@ -33,15 +42,6 @@ namespace TryComplexRx.Domain
                 AccountNumber = Number,
                 SourceAccountNumber = sourceAccountNumber
             });
-        }
-
-        public static Account Create(string context, string number)
-        {
-            var account = new Account { Context = context, Number = number };            
-            Env.Events.OnNext(new AccountCreated { Context = context, AccountNumber = number });
-            Accounts.Attach(account);
-            return account;
-        }
-        
+        }        
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reactive.Subjects;
 
 namespace TryComplexRxTests
 {
-    internal static class RxHelpers
+    internal static class EventRecorder
     {
-        public static EventRecorder<T> Recorder<T>(string context)
+        public static EventRecorder<T> Recorder<T>()
         {
             return new EventRecorder<T>();
         }        

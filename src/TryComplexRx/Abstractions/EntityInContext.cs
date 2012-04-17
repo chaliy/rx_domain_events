@@ -1,13 +1,17 @@
 ﻿namespace TryComplexRx.Abstractions
 {
-    public class EntityInContext : IInContext
+    using System;
+    using System.Reactive.Subjects;
+
+    public class EntityInContext
     {
-        public string Context { get; protected set; }
+        readonly Subject<dynamic> events = new Subject<dynamic>();
+
+        public IObservable<dynamic> Events { get { return events; } }
 
         protected void SubmitEvent(dynamic @event)
         {
-            @event.Context = Context;
-            Env.Events.OnNext(@event);
+            events.OnNext(@event);
         }
     }
 }

@@ -40,11 +40,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Reactive, Version=1.0.10621.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Rx-Main.1.0.11226\lib\Net4\System.Reactive.dll</HintPath>
     </Reference>
+    <Reference Include="System.Reflection.Context" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
@@ -52,16 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstractions\EntityInContext.cs" />
-    <Compile Include="Abstractions\EventInContext.cs" />
-    <Compile Include="Domain\Account.cs" />
-    <Compile Include="Domain\AccountCreated.cs" />
-    <Compile Include="Domain\AccountListDenormalizer.cs" />
-    <Compile Include="Domain\Accounts.cs" />
-    <Compile Include="Domain\MoneyTransferedFrom.cs" />
-    <Compile Include="Domain\IAccountEvent.cs" />
-    <Compile Include="Domain\MoneyTransferedTo.cs" />
+    <Compile Include="Domain\Accounts\Account.cs" />
+    <Compile Include="Domain\Accounts\AccountCreated.cs" />
+    <Compile Include="Domain\Accounts\AccountListDenormalizer.cs" />
+    <Compile Include="Domain\Accounts\AccountsModule.cs" />
+    <Compile Include="Domain\Accounts\MoneyTransferedFrom.cs" />
+    <Compile Include="Domain\Accounts\IAccountEvent.cs" />
+    <Compile Include="Domain\Accounts\MoneyTransferedTo.cs" />
+    <Compile Include="Execution.cs" />
     <Compile Include="_.cs" />
-    <Compile Include="Env.cs" />
+    <Compile Include="SystemEnv.cs" />
     <Compile Include="Abstractions\IInContext.cs" />
     <Compile Include="Infrastructure\Views.cs" />
     <Compile Include="Program.cs" />

@@ -1,8 +1,6 @@
-﻿using TryComplexRx.Abstractions;
-
-namespace TryComplexRx.Domain
+﻿namespace TryComplexRx.Domain.Accounts
 {
-    public class AccountCreated : EventInContext, IAccountEvent
+    public class AccountCreated : IAccountEvent
     {
         public string AccountNumber { get; set; }
 
